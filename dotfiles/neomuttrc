@@ -1,0 +1,20 @@
+set from = "test@unixmail.fr"
+
+# Nom complet de l'expéditeur
+set realname = "Test Unixmail"
+
+# Génération du champs from
+set use_from = yes
+
+
+set reverse_name
+
+set editor = "vim -c 'set tw=72' -c 'set wrap'"
+
+
+set mbox_type=Maildir
+set folder=~/Maildir
+set spoolfile=+ens/Inbox
+set header_cache=~/.cache/mutt
+
+
