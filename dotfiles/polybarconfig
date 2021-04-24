@@ -62,7 +62,7 @@ font-2 = sm4tik:pixelsize=10;1
 
 modules-left = i3
 modules-center =  date
-modules-right =    powermenu
+modules-right = wireless-network memory cpu  battery powermenu
 
 tray-position = right
 tray-padding = 11
@@ -180,7 +180,7 @@ label-urgent-padding = 4
 
 [module/wireless-network]
 type = internal/network
-interface = wlp5s0
+interface = wlp3s0
 interval = 3.0
 
 format-connected-prefix = " "
@@ -191,7 +191,7 @@ format-connected-underline = #9f78e1
 label-connected =
 
 format-disconnected = " no wifi :( "
-format-disconnected-background = ${colors.background-unf}
+format-disconnected-background = ${colors.background-alt}
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
 label-disconnected-foreground = ${colors.foreground-alt}
@@ -291,7 +291,7 @@ adapter = AC
 full-at = 97
 
 format-full-background = ${colors.background-mod2}
-format-charging-background = ${colors.background-mod1}
+format-charging-background = ${colors.background-alt}
 format-charging = "⁣   <animation-charging> <label-charging>"
 format-charging-underline = #ffb52a
 
@@ -346,7 +346,7 @@ menu-1-1 = reboot
 menu-1-1-exec = sudo reboot
 
 menu-2-0 = power off
-menu-2-0-exec = sudo shutdown 0
+menu-2-0-exec = shutdown now
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
 
@@ -415,21 +415,21 @@ margin-bottom = 5
 ;type = internal/backlight
 ;card = intel_backlight
 ;
-;[module/cpu]
-;type = internal/cpu
-;interval = 2
-;format-prefix = " "
-;format-prefix-foreground = ${colors.foreground-alt}
-;format-prefix-background = ${colors.foreground-mod}
-;format-underline = #f90000
-;label = %percentage%%
-;
-;[module/memory]
-;type = internal/memory
-;interval = 2
-;format-prefix = " "
-;format-prefix-foreground = ${colors.foreground-alt}
-;format-underline = #4bffdc
-;label = %percentage_used%%
-
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = "   "
+format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-background = ${colors.background-alt}
+format-underline = #f90000
+label = %percentage%%
+format-background = ${colors.background-alt}
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #4bffdc
+label = %percentage_used%%
+format-background = ${colors.background-alt}
 ; vim:ft=dosini

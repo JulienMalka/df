@@ -1,0 +1,13 @@
+[ArchiveSentMailsFilter]
+[InboxFilter]
+
+[Filter.1]
+query = 'subject:[DG]'
+tags = +dg
+message = Mail pour la DG
+
+[MailMover]
+folders = ens/Inbox
+rename = True
+ens/Inbox = 'tag:dg':ens/DG
+

@@ -1,7 +1,7 @@
-set from = "test@unixmail.fr"
+set from = "julien.malka@ens.fr"
 
 # Nom complet de l'expéditeur
-set realname = "Test Unixmail"
+set realname = "Julien Malka"
 
 # Génération du champs from
 set use_from = yes
@@ -13,8 +13,28 @@ set editor = "vim -c 'set tw=72' -c 'set wrap'"
 
 
 set mbox_type=Maildir
-set folder=~/Maildir
-set spoolfile=+ens/Inbox
+set folder=~/Maildir/ens
+set spoolfile=+Inbox
 set header_cache=~/.cache/mutt
+set sidebar_visible = yes
+
+mailboxes =Inbox =DG =DG/Malles =DG/Externements =DG/Thurnages
+
+set sidebar_width=12
+#set sidebar_delim='|'
+# color of folders with new mail
+color sidebar_new yellow default
+# ctrl-n, ctrl-p to select next, prev folder# ctrl-o to open selected folder
+bind index \CP sidebar-prev
+bind index \CN sidebar-next
+bind index \CO sidebar-open
+bind pager \CP sidebar-prev
+bind pager \CN sidebar-next
+bind pager \CO sidebar-open
 
 
+set sort = threads 
+set sort_aux = reverse-last-date-received
+
+source ~/df/dotfiles/dracula.muttrc
+set sendmail = "msmtp"
